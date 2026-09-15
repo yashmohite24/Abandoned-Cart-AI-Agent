@@ -24,4 +24,18 @@ Tables: `call_executions`, `feedback` (RLS enabled, no public policies — inser
 
 ## Deploy
 
-Connect this repo to [Vercel](https://vercel.com) and set the same environment variables for Production and Preview.
+1. Push to GitHub (`yashmohite24/Abandoned-Cart-AI-Agent`):
+   ```bash
+   git push -u origin main
+   ```
+   If HTTPS auth fails, run `gh auth login` (or use SSH) and retry.
+
+2. In [Vercel](https://vercel.com), import the GitHub repo and add environment variables for **Production** and **Preview**:
+   - `BOLNA_API_KEY`
+   - `BOLNA_AGENT_ID`
+   - `NEXT_PUBLIC_SUPABASE_URL` = `https://lxczfjooxtgkuifnbefd.supabase.co`
+   - `SUPABASE_ANON_KEY` (server-only; used for inserts) **or** `SUPABASE_SERVICE_ROLE_KEY`
+
+3. Deploy from the Vercel dashboard (or `vercel login` then `vercel --prod` locally).
+
+Logs: Supabase → Table Editor → `call_executions` and `feedback`.

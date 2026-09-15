@@ -35,3 +35,22 @@ CREATE POLICY "service_insert_feedback"
   FOR INSERT
   TO anon, authenticated
   WITH CHECK (true);
+
+CREATE OR REPLACE FUNCTION public.has_recent_call(p_phone text)
+RETURNS boolean
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1
+    FROM public.call_executions
+    WHERE recipient_phone = p_phone
+      AND http_status >= 200
+      AND http_status < 300
+      AND created_at > now() - interval '5 minutes'
+  );
+$$;
+
+REVOKE ALL ON FUNCTION public.has_recent_call(text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.has_recent_call(text) TO anon, authenticated;

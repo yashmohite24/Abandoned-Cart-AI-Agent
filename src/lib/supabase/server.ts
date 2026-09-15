@@ -43,21 +43,15 @@ const COOLDOWN_MS = 5 * 60 * 1000;
 
 export async function hasRecentSuccessfulCall(recipientPhone: string): Promise<boolean> {
   const supabase = createServiceSupabase();
-  const since = new Date(Date.now() - COOLDOWN_MS).toISOString();
 
-  const { data, error } = await supabase
-    .from("call_executions")
-    .select("id")
-    .eq("recipient_phone", recipientPhone)
-    .gte("http_status", 200)
-    .lt("http_status", 300)
-    .gte("created_at", since)
-    .limit(1);
+  const { data, error } = await supabase.rpc("has_recent_call", {
+    p_phone: recipientPhone,
+  });
 
   if (error) {
     console.error("Cooldown check failed:", error.message);
     return false;
   }
 
-  return (data?.length ?? 0) > 0;
+  return Boolean(data);
 }
