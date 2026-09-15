@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f5f0e6;
+  --ink: #0d0d0d;
+  --accent: #e85d2a;
+}
+
+@theme inline {
+  --font-serif: var(--font-instrument-serif);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.font-serif {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+}
+
+.font-mono {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
