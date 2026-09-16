@@ -1,25 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f5f0e6;
-  --ink: #0d0d0d;
-  --accent: #e85d2a;
+  --beige: #f3ebe0;
+  --beige-deep: #e8dfd2;
+  --salmon: #f2b8a8;
+  --salmon-soft: #fce8e2;
+  --salmon-strong: #e89584;
+  --olive: #8f9f7a;
+  --olive-soft: #d4deca;
+  --olive-deep: #5c6b4f;
+  --ink: #3a3d34;
+  --ink-muted: #5f6358;
+  --white: #fffcf8;
 }
 
 @theme inline {
-  --font-serif: var(--font-instrument-serif);
-  --font-mono: var(--font-plex-mono);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-fraunces);
+  --color-beige: var(--beige);
+  --color-beige-deep: var(--beige-deep);
+  --color-salmon: var(--salmon);
+  --color-salmon-soft: var(--salmon-soft);
+  --color-salmon-strong: var(--salmon-strong);
+  --color-olive: var(--olive);
+  --color-olive-soft: var(--olive-soft);
+  --color-olive-deep: var(--olive-deep);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-surface: var(--white);
 }
 
 body {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--beige);
+  color: var(--ink);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
-.font-serif {
-  font-family: var(--font-instrument-serif), Georgia, serif;
-}
-
-.font-mono {
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
 }

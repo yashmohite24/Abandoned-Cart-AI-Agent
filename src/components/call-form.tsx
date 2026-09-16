@@ -52,12 +52,10 @@ export function CallForm({ agentActive }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid gap-4 sm:grid-cols-[1fr_1fr]">
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#1a1a1a]/60">
-            Country
-          </span>
+          <span className="mb-2 block text-sm font-semibold text-ink">Country</span>
           <select
             value={dialCode}
             onChange={(e) => {
@@ -65,7 +63,7 @@ export function CallForm({ agentActive }: Props) {
               setPhone("");
             }}
             disabled={!agentActive || loading}
-            className="mt-1 w-full border-b border-[#1a1a1a]/25 bg-transparent py-2 outline-none focus:border-[#e85d2a] disabled:opacity-50"
+            className="w-full rounded-xl border border-beige-deep bg-white px-4 py-3 text-ink outline-none transition focus:border-olive focus:ring-2 focus:ring-olive-soft disabled:opacity-50"
           >
             {COUNTRIES.map((country) => (
               <option key={`${country.name}-${country.dialCode}`} value={country.dialCode}>
@@ -75,34 +73,36 @@ export function CallForm({ agentActive }: Props) {
           </select>
         </label>
         <label className="block">
-          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#1a1a1a]/60">
-            Phone number
-          </span>
+          <span className="mb-2 block text-sm font-semibold text-ink">Phone number</span>
           <input
             inputMode="numeric"
             value={phone}
             onChange={(e) => handlePhoneChange(e.target.value)}
-            placeholder={isIndia ? "10-digit mobile" : "Without country code"}
+            placeholder={isIndia ? "10-digit mobile number" : "Number without country code"}
             disabled={!agentActive || loading}
-            className="mt-1 w-full border-b border-[#1a1a1a]/25 bg-transparent py-2 outline-none focus:border-[#e85d2a] disabled:opacity-50"
+            className="w-full rounded-xl border border-beige-deep bg-white px-4 py-3 text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-olive focus:ring-2 focus:ring-olive-soft disabled:opacity-50"
             required
           />
         </label>
       </div>
 
       {result && (
-        <p
-          className={`font-mono text-sm ${result.type === "success" ? "text-emerald-700" : "text-[#c0392b]"}`}
+        <div
           role="status"
+          className={`rounded-xl px-4 py-3 text-sm font-medium ${
+            result.type === "success"
+              ? "bg-olive-soft text-olive-deep"
+              : "bg-salmon-soft text-[#8b3d32]"
+          }`}
         >
           {result.text}
-        </p>
+        </div>
       )}
 
       <button
         type="submit"
         disabled={!agentActive || loading}
-        className="bg-[#e85d2a] px-8 py-3 font-mono text-xs uppercase tracking-[0.2em] text-[#0d0d0d] transition hover:bg-[#f06f3f] disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-xl bg-salmon-strong px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-[#df8878] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[220px]"
       >
         {loading ? "Requesting call…" : "Receive the call!"}
       </button>

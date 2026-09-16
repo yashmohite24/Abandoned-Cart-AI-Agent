@@ -39,12 +39,16 @@ export function StatusBadge({
   const label = loading ? "Checking…" : status?.message ?? "Limit exhausted";
 
   return (
-    <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[#f5f0e6]/80">
+    <div
+      className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium ${
+        active ? "bg-olive-soft text-olive-deep" : "bg-salmon-soft text-[#9b4f42]"
+      }`}
+    >
       <span
-        className={`h-2 w-2 rounded-full ${active ? "bg-emerald-400" : "bg-[#e85d2a]"}`}
+        className={`h-2 w-2 rounded-full ${active ? "bg-olive" : "bg-salmon-strong"}`}
         aria-hidden
       />
-      <span>{label}</span>
+      <span>Status: {label}</span>
     </div>
   );
 }
