@@ -1,6 +1,6 @@
 # Abandoned Cart Recovery Agent (Demo)
 
-Single-page demo for the Beardo cart-abandonment voice agent powered by [Bolna](https://www.bolna.ai). Visitors read the scenario, enter a phone number, and receive an outbound AI call. Executions and feedback are logged in Supabase.
+AI agent to recover abandoned carts on ecommerce platforms. This repo is a single-page demo for the Beardo cart-abandonment voice agent powered by [Bolna](https://www.bolna.ai). Visitors read the scenario, enter a phone number, and receive an outbound AI call. Executions and feedback are logged in Supabase.
 
 ## Setup
 
