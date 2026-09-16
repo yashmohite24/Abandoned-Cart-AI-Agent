@@ -18,7 +18,7 @@ export function DemoPage() {
             <button
               type="button"
               onClick={() => setFeedbackOpen(true)}
-              className="rounded-full border border-olive-soft bg-olive-soft/60 px-4 py-2 text-sm font-medium text-olive-deep transition hover:bg-olive-soft"
+              className="rounded-xl bg-olive-deep px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-olive-deep/25 transition hover:bg-[#4d5a42] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-deep"
             >
               Give your feedback
             </button>

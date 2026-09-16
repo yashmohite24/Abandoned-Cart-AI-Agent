@@ -99,13 +99,15 @@ export function CallForm({ agentActive }: Props) {
         </div>
       )}
 
-      <button
-        type="submit"
-        disabled={!agentActive || loading}
-        className="w-full rounded-xl bg-salmon-strong px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-[#df8878] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[220px]"
-      >
-        {loading ? "Requesting call…" : "Receive the call!"}
-      </button>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          disabled={!agentActive || loading}
+          className="w-full rounded-xl bg-salmon-strong px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-[#df8878] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[220px]"
+        >
+          {loading ? "Requesting call…" : "Receive the call!"}
+        </button>
+      </div>
     </form>
   );
 }
