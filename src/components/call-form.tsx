@@ -52,8 +52,8 @@ export function CallForm({ agentActive }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid gap-4">
         <label className="block">
           <span className="mb-2 block text-sm font-semibold text-ink">Country</span>
           <select
@@ -103,7 +103,7 @@ export function CallForm({ agentActive }: Props) {
         <button
           type="submit"
           disabled={!agentActive || loading}
-          className="w-full rounded-xl bg-salmon-strong px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-[#df8878] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:min-w-[220px]"
+          className="w-full rounded-xl bg-salmon-strong px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-[#df8878] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? "Requesting call…" : "Receive the call!"}
         </button>
