@@ -66,7 +66,7 @@ export function DemoPage() {
   const [agentActive, setAgentActive] = useState(true);
 
   return (
-    <div className="demo-shell flex min-h-dvh flex-col">
+    <div className="demo-shell min-h-dvh">
       <header className="sticky top-0 z-30 shrink-0 border-b border-beige-deep/60 bg-surface/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
           <div className="flex items-center gap-3">
@@ -91,9 +91,9 @@ export function DemoPage() {
         </div>
       </header>
 
-      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row lg:items-start">
         {/* Content */}
-        <div className="order-2 min-h-0 flex-1 overflow-y-auto lg:order-1">
+        <div className="order-2 min-w-0 flex-1 lg:order-1">
           <div className="mx-auto max-w-3xl px-5 py-8 sm:px-8 sm:py-10 lg:py-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-olive-soft bg-olive-soft/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-olive-deep">
               <span className="h-1.5 w-1.5 rounded-full bg-[#22c55e]" aria-hidden />
@@ -176,12 +176,10 @@ export function DemoPage() {
 
         {/* Call panel — first on mobile, fixed column on desktop */}
         <aside
-          className="relative z-20 order-1 shrink-0 border-b border-beige-deep/60 bg-beige/40 lg:order-2 lg:w-[min(100%,440px)] lg:border-b-0 lg:border-l lg:border-beige-deep/50"
+          className="relative z-20 order-1 shrink-0 border-b border-beige-deep/60 bg-beige/40 lg:order-2 lg:sticky lg:top-16 lg:w-[min(100%,440px)] lg:self-start lg:border-b-0 lg:border-l lg:border-beige-deep/50"
         >
-          <div className="lg:sticky lg:top-16 lg:z-20 lg:max-h-[calc(100dvh-4rem)] lg:overflow-y-auto lg:py-6">
-            <div className="scroll-mt-20 px-5 py-8 sm:px-6 lg:px-8">
-              <HeroCallSection agentActive={agentActive} />
-            </div>
+          <div className="scroll-mt-20 px-5 py-8 sm:px-6 lg:px-8 lg:py-10">
+            <HeroCallSection agentActive={agentActive} />
           </div>
         </aside>
       </div>
