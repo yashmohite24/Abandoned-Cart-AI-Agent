@@ -17,7 +17,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "Abandoned Cart Recovery Agent",
   description:
-    "Try the Beardo abandoned cart recovery voice AI agent — understand, solve, and close.",
+    "See how an AI agent can recover an abandoned cart over a phone call — Beardo voice demo.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
