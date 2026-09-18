@@ -74,11 +74,9 @@ export function DemoPage() {
               className="flex h-9 w-9 items-center justify-center rounded-full bg-olive-deep text-xs font-bold tracking-wide text-white"
               aria-hidden
             >
-              B
+              V
             </span>
-            <p className="text-sm font-semibold text-ink">
-              Beardo <span className="font-normal text-ink-muted">· Voice demo</span>
-            </p>
+            <p className="text-sm font-semibold text-ink">Voice AI Agent Demo</p>
           </div>
           <div className="flex flex-wrap items-center justify-end gap-2.5 sm:gap-3">
             <button
